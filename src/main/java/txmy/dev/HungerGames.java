@@ -18,7 +18,7 @@ import txmy.dev.utils.FileConfig;
 @Getter
 public class HungerGames extends JavaPlugin {
 
-    public static String MANAGEMENT_PREFIX = "&7[&eGame Management&7] ";
+    public static String MANAGEMENT_PREFIX = "&7[&eGame Management&7] &f";
 
     @Getter
     private static HungerGames instance;
