@@ -1,0 +1,9 @@
+# How this will be:
+
+# arena {id}:
+#   spawn: {location}
+#   world: {worldName}
+#   required: 2
+#   spawnLocations: {serialized locations}
+#   loot:
+#     - position//tier

@@ -1,0 +1,37 @@
+# might lag when the game is beginning but you ensure it won't lag in game
+# also if it lags you might consider upgrading your machine
+# chest will be filled when the player opens the chest first time.
+fill-chest-while-game: false
+# Network stuff
+server-id: 'sg-1'
+# if u want2 know what's happening in the plugin (i know you attempted to decompile it haha)
+debug: false
+# i have to explain? lol
+network-mode: true
+# while testing you can toggle this
+dev-mode-only: true
+dev-whitelist:
+  - txmy
+dev-kick-message: '&cThis server is currently in developer mode.'
+#
+database:
+  # Local Machine information, safe as fuck
+  host: 127.0.0.1
+  port: 13017
+  user: user
+  pass: pass
+  # If your database requires user-pass authentication, change this value to true.
+  auth: false
+  database: lol
+
+redis:
+  # It will be really great if you have redis, it's easier to send info through servers
+  enabled: false
+  host: 127.0.0.1
+  port: 9907
+  # There's no point givin' an username
+  password: pass
+  # As same as database one
+  auth: false
+
+license: 'Im not gonna give you this LOL'

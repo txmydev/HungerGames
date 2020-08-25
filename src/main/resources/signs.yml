@@ -1,0 +1,8 @@
+# How sign's will be displayed.
+
+games: []
+
+# Format:
+# games:
+#   game-id:
+#     pos:

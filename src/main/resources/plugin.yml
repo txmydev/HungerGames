@@ -1,0 +1,23 @@
+main: txmy.dev.HungerGames
+name: HungerGames
+version: 1.0.0-SNAPSHOT
+description: Hunger Games plugin for Plover Network
+
+permissions:
+  hungergames.*:
+    default: false
+    children:
+      hungergames.vip:
+        default: op
+      hungergames.admin:
+        default: false
+      hungergames.user:
+        default: true
+
+commands:
+  hungergames:
+    aliases:
+      - hg
+      - sg
+      - survivalgames
+    description: Main command for hunger games.

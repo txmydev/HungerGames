@@ -1,0 +1,46 @@
+# The title of the scoreboard (currently global, maybe in a future i'll change it)
+title: '&e&ltxmy.dev'
+
+# This things needed some custom space cause they don't like bein' in a list lol
+single:
+  starting:
+    - '&eStarting in&7: &f{time}'
+  nextevent:
+    # needin to create some events to don't create a fuckin boring old sg
+#
+lobby:
+  - ' '
+  - '&eOnline&7: &f{global}'
+  - '&eRating&7: &f{rating}'
+  - ' '
+  - '&6&lYour Stats'
+  - ' '
+  - '&aWins&7: &f{wins}'
+  - '&eKills&7: &f{kills}'
+  - '&cDeaths&7: &f{deaths}'
+  - ' '
+  - '&eyourserver.com'
+game-lobby:
+  - '&7ID: {game-id}'
+  - ' '
+  - '&eThe game is waiting for &f{required}'
+  - '&eto start the game.'
+  - ' '
+  - '&eyourserver.com'
+starting:
+  - '&7ID: {game-id}'
+  - ' '
+  - '<starting>'
+  - ' '
+  - '&eRegion&7: &fSA'
+game:
+  - '&7ID: {game-id}'
+  - ' '
+  - '&eGame Time&7: &f{gametime}'
+  - ' '
+  - '&ePlaying&7: &f{playing}'
+  - '&eWatching&7: &f{watching}'
+  - ' '
+  - '&eYour Kills&7: &f{gamekills}'
+  - ' '
+  - '{nextevent}'

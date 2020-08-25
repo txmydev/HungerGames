@@ -1,0 +1,8 @@
+- Create database adapter.
+- Profile
+- Easy listener handling
+- License
+- Game stuff
+- Sign's
+- Commands
+- Finally add support for aqua core due to compatibility problmes LOL
