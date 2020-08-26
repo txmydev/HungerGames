@@ -59,6 +59,7 @@ public class GameManager {
         loadWorld(game, configCursor);
 
         game.setRequired(configCursor.getInt("required"));
+        game.setMax(configCursor.getInt("max", 12));
 
         new GameRegisterEvent(game).call();
         games.add(game);

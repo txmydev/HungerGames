@@ -1,0 +1,21 @@
+lang:
+  game:
+    join: ''
+    no-spawns-available: '&cThere are no free spawn locations to teleport you, we''re sorry.'
+
+actionbar:
+  enabled: true
+  #
+  main-lobby: '&eWelcome to &cYour Server&e!'
+  lobby: '&eThe server needs &f{players} &eplayers to start.'
+  starting: '&eThe game will start in &f{time} seconds&e.'
+  game: 'none'
+
+titles:
+  join:
+    enabled: false
+    text: '&eWelcome to &cYour Server&e!'
+    subtitle: '&eHope you get a good time :D'
+    fadeIn: 1
+    stay: 3
+    fadeOut: 2

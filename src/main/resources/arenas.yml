@@ -4,6 +4,7 @@
 #   spawn: {location}
 #   world: {worldName}
 #   required: 2
+#   max: 4
 #   spawnLocations: {serialized locations}
 #   loot:
 #     - position//tier

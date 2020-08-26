@@ -10,6 +10,9 @@ import txmy.dev.event.PlayerChangeStateEvent;
 import txmy.dev.profile.Profile;
 import txmy.dev.profile.ProfileHandler;
 import txmy.dev.scoreboard.HungerBoard;
+import txmy.dev.utils.Common;
+import txmy.dev.utils.ConfigCursor;
+import txmy.dev.utils.FileConfig;
 
 import java.util.UUID;
 
@@ -31,6 +34,17 @@ public class PlayerListener implements Listener {
 
         // Init scoreboard
         new HungerBoard(player);
+
+        FileConfig fileConfig = HungerGames.getInstance().getLangConfig();
+        ConfigCursor configCursor = new ConfigCursor(fileConfig, "titles.join");
+
+        if(!configCursor.getBoolean("enabled")) return;
+
+        Common.sendTitle(player, configCursor.getString("text"),
+                configCursor.getString("subTitle"),
+                configCursor.getInt("fadeIn"),
+                configCursor.getInt("stay"),
+                configCursor.getInt("fadeOut"));
     }
 
     @EventHandler

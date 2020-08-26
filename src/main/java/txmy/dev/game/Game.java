@@ -10,11 +10,10 @@ import txmy.dev.HungerGames;
 import txmy.dev.adapter.object.LocationAdapter;
 import txmy.dev.chest.HungerChest;
 import txmy.dev.profile.Profile;
+import txmy.dev.utils.Common;
 import txmy.dev.utils.FileConfig;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Getter
 @Setter
@@ -22,18 +21,19 @@ public class Game {
 
     private final String id;
     private Location spawn;
-    private Set<Location> spawnLocations;
+    private List<Location> spawnLocations;
     private Set<HungerChest> loot;
     private World world;
     private boolean ended;
     private State state = State.LOBBY;
     private int required, startTime, gameTime;
     private Set<Player> watchers;
+    private int max;
 
     public Game(String id) {
         this.id = id;
 
-        this.spawnLocations = new HashSet<>();
+        this.spawnLocations = new ArrayList<>();
         this.loot = new HashSet<>();
         this.watchers = new HashSet<>();
     }
@@ -73,5 +73,9 @@ public class Game {
         }
 
         return set;
+    }
+
+    public void announce(String message) {
+        getPlayers().forEach(player -> player.sendMessage(Common.colorize(message)));
     }
 }

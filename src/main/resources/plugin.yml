@@ -1,7 +1,7 @@
 main: txmy.dev.HungerGames
 name: HungerGames
 version: 1.0.0-SNAPSHOT
-description: Hunger Games plugin for Plover Network
+description: Open source hunger games.
 
 permissions:
   hungergames.*:

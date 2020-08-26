@@ -27,7 +27,11 @@ public class ConfigCursor {
     }
 
     public int getInt(String path){
-        return  config.getInt(basePath + "." + path, -1);
+        return getInt(path, 0);
+    }
+
+    public int getInt(String path, int defaultVal) {
+        return config.getInt(basePath + "." + path, defaultVal);
     }
 
     public double getDouble(String path) {

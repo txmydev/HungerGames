@@ -11,7 +11,10 @@ import txmy.dev.adapter.impl.MongoAdapter;
 import txmy.dev.adapter.impl.RedisAdapter;
 import txmy.dev.database.DatabaseConfiguration;
 import txmy.dev.game.GameManager;
+import txmy.dev.nms.NMS;
+import txmy.dev.nms.v1_8_R3;
 import txmy.dev.profile.ProfileHandler;
+import txmy.dev.tasks.ActionBarTask;
 import txmy.dev.utils.ConfigCursor;
 import txmy.dev.utils.FileConfig;
 
@@ -26,10 +29,12 @@ public class HungerGames extends JavaPlugin {
     private Adapter<JedisPool> redis;
     private Adapter<MongoDatabase> database;
 
-    private FileConfig mainConfig, arenasConfig, lootConfig, scoreboardConfig;
+    private FileConfig mainConfig, arenasConfig, lootConfig, scoreboardConfig, langConfig;
 
     private GameManager gameManager;
     private ProfileHandler profileHandler;
+
+    private NMS nmsHandler;
 
     @Setter
     private boolean useRedis, debug;
@@ -42,6 +47,7 @@ public class HungerGames extends JavaPlugin {
         this.arenasConfig = new FileConfig("arenas.yml");
         this.lootConfig = new FileConfig("loot.yml");
         this.scoreboardConfig = new FileConfig("scoreboard.yml");
+        this.langConfig =new FileConfig("lang.yml");
 
         this.gameManager = new GameManager(this);
         this.profileHandler = new ProfileHandler(this);
@@ -49,8 +55,25 @@ public class HungerGames extends JavaPlugin {
         loadRedis();
         loadMongo();
         loadNetwork();
+        loadHandler();
 
         this.gameManager.loadAll();
+
+        new ActionBarTask().runTaskTimerAsynchronously(this, 10L, 20L);
+    }
+
+    private void loadHandler() {
+        String version = Bukkit.getServer().getClass().getName().substring(Bukkit.getServer().getClass().getName().lastIndexOf("."));
+
+        switch(version) {
+            case "v1_8_R3":
+                nmsHandler = new v1_8_R3();
+                break;
+            default:
+                Bukkit.getLogger().info("This net.minecraft.server version need's to be implemented, you may use 1.8.8 spigot.");
+                Bukkit.shutdown();
+                break;
+        }
     }
 
     private void loadNetwork() {
@@ -104,4 +127,5 @@ public class HungerGames extends JavaPlugin {
 
         instance = null;
     }
+
 }

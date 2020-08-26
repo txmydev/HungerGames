@@ -1,5 +1,3 @@
-- Create database adapter.
-- Profile
 - Easy listener handling
 - License
 - Game stuff

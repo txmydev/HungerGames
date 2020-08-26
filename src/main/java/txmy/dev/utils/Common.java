@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import txmy.dev.HungerGames;
 
 import java.util.List;
 
@@ -30,5 +31,13 @@ public class Common {
         entries.forEach(str ->list.add(colorize(str)));
 
         return list;
+    }
+
+    public static void sendTitle(Player player, String title, String subTitle, int fadeIn, int stay, int fadeOut) {
+        HungerGames.getInstance().getNmsHandler().sendTitle(player, title, subTitle, fadeIn, stay, fadeOut);
+    }
+    
+    public static void sendActionBar(Player player, String actionBar){
+        HungerGames.getInstance().getNmsHandler().sendActionBar(player, actionBar);
     }
 }
