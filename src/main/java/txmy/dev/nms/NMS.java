@@ -8,4 +8,7 @@ public interface NMS {
 
     void sendActionBar(Player player, String message);
 
+    void mount(Player player);
+
+    void unMount(Player player);
 }

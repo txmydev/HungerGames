@@ -1,4 +1,4 @@
-# might lag when the game is beginning but you ensure it won't lag in game
+# If false, might lag when the game is beginning but you ensure it won't lag in game
 # also if it lags you might consider upgrading your machine
 # chest will be filled when the player opens the chest first time.
 fill-chest-while-game: false

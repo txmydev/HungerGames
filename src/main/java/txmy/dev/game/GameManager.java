@@ -115,7 +115,8 @@ public class GameManager {
             Debug.debug("Now tier " + i + " chest has " + Arrays.stream(loot.get(i)).filter(Objects::nonNull).filter(item -> item.getType() != Material.AIR).count());
     }
 
-    public void fillChest(int tier, HungerChest chest) {
+    public void fillChest(HungerChest chest) {
+        int tier = chest.getTier();
         if(!this.loot.containsKey(tier)) throw new IllegalArgumentException("There are no chests tier " + tier);
 
         ItemStack[] items = loot.get(tier);

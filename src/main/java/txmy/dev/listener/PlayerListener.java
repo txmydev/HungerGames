@@ -7,8 +7,6 @@ import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import txmy.dev.HungerGames;
 import txmy.dev.event.PlayerChangeStateEvent;
-import txmy.dev.profile.Profile;
-import txmy.dev.profile.ProfileHandler;
 import txmy.dev.scoreboard.HungerBoard;
 import txmy.dev.utils.Common;
 import txmy.dev.utils.ConfigCursor;
@@ -38,7 +36,7 @@ public class PlayerListener implements Listener {
         FileConfig fileConfig = HungerGames.getInstance().getLangConfig();
         ConfigCursor configCursor = new ConfigCursor(fileConfig, "titles.join");
 
-        if(!configCursor.getBoolean("enabled")) return;
+        if (!configCursor.getBoolean("enabled")) return;
 
         Common.sendTitle(player, configCursor.getString("text"),
                 configCursor.getString("subTitle"),
@@ -50,4 +48,18 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onChangeState(PlayerChangeStateEvent event) {
     }
+
+    /*
+    @EventHandler (priority = EventPriority.HIGHEST)
+    public void onAsyncPlayerChatEvent(AsyncPlayerChatEvent event) {
+        Player player = event.getPlayer();
+        event.setCancelled(true);
+
+        Profile profile = HungerGames.getInstance().getProfileHandler().getProfile(player.getUniqueId());
+
+        if(profile.isPlaying()) {
+            Game game = profile.getGame();
+        }
+    }
+    */
 }

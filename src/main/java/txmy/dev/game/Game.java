@@ -10,6 +10,9 @@ import txmy.dev.HungerGames;
 import txmy.dev.adapter.object.LocationAdapter;
 import txmy.dev.chest.HungerChest;
 import txmy.dev.profile.Profile;
+import txmy.dev.tasks.AreaRecognitionTask;
+import txmy.dev.tasks.GameStartTask;
+import txmy.dev.tasks.GameTask;
 import txmy.dev.utils.Common;
 import txmy.dev.utils.FileConfig;
 
@@ -30,12 +33,20 @@ public class Game {
     private Set<Player> watchers;
     private int max;
 
+    private AreaRecognitionTask recognitionTask;
+    private GameStartTask startTask;
+    private GameTask gameTask;
+
     public Game(String id) {
         this.id = id;
 
         this.spawnLocations = new ArrayList<>();
         this.loot = new HashSet<>();
         this.watchers = new HashSet<>();
+
+        this.recognitionTask = new AreaRecognitionTask(this);
+        this.startTask = new GameStartTask(this);
+        this.gameTask = new GameTask(this);
     }
 
     // Save only the things that are set

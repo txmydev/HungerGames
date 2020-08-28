@@ -1,6 +1,5 @@
 package txmy.dev.utils;
 
-import org.bukkit.ChatColor;
 import txmy.dev.HungerGames;
 
 public class Chat {

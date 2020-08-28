@@ -7,6 +7,8 @@ import org.bukkit.entity.Player;
 import txmy.dev.HungerGames;
 
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Common {
 
@@ -39,5 +41,10 @@ public class Common {
     
     public static void sendActionBar(Player player, String actionBar){
         HungerGames.getInstance().getNmsHandler().sendActionBar(player, actionBar);
+    }
+
+    public static <T> T getRandom(List<T> list) {
+        Random random = ThreadLocalRandom.current();
+        return list.get(random.nextInt(list.size()- 1));
     }
 }
